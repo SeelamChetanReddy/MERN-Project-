@@ -1,9 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
+
 const port = 3000;
 
 mongoose.connect('mongodb://127.0.0.1:27017/studentDatab', {
